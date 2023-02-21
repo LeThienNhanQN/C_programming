@@ -1,22 +1,12 @@
 #include <stdio.h>
 #include "function_array.h"
-#include <windows.h>
+
 int main() {
-	
-	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-    CONSOLE_SCREEN_BUFFER_INFO consoleInfo;
-    WORD savedAttributes;
 
-    GetConsoleScreenBufferInfo(hConsole, &consoleInfo);
-    savedAttributes = consoleInfo.wAttributes;
-
-    SetConsoleTextAttribute(hConsole, FOREGROUND_RED);
-    printf("\t\t\tChuong Trinh Quan Ly Mang So Nguyen\n");
-
-    SetConsoleTextAttribute(hConsole, savedAttributes);
     char choice;
     int n = 0;
-    int a[100];
+    int s_Max_array = 100;
+    int a[s_Max_array];
     int k = 0;
     int x = 0;
     int found = 0;

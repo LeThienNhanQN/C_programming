@@ -1,23 +1,25 @@
 #include <stdio.h>
 #include "function_array.h"
 
-void init_array(int *a, int n) {
+int init_array(int *a, int n) {
     for (int i = 0; i < n; i++) {
         a[i] = 0;
     }
+    return -1;
 }
 
-void print_array(int *a, int n) {
+int print_array(int *a, int n) {
     for (int i = 0; i < n; i++) {
         printf("%d ", a[i]);
     }
     printf("\n");
+    return -1;
 }
 
-void insert_array(int *a, int k, int x, int *n) {
+int insert_array(int *a, int k, int x, int *n) {
     if (k < 0 || k > *n) {
         printf("Vi tri khong hop le.\n");
-        return;
+        return -1;
     }
 
     for (int i = *n - 1; i >= k; i--) {
@@ -25,21 +27,23 @@ void insert_array(int *a, int k, int x, int *n) {
     }
     a[k] = x;
     (*n)++;
+    return -1;
 }
 
-void delete_array(int *a, int k, int *n) {
+int delete_array(int *a, int k, int *n) {
     if (k < 0 || k >= *n) {
         printf("Vi tri khong hop le.\n");
-        return;
+        return -1;
     }
 
     for (int i = k; i < *n - 1; i++) {
         a[i] = a[i + 1];
     }
     (*n)--;
+    return -1;
 }
 
-void sort_array_ascending(int *a, int n) {
+int sort_array_ascending(int *a, int n) {
     int i, j, temp;
     for (i = 0; i < n - 1; i++) {
         for (j = i + 1; j < n; j++) {
@@ -50,8 +54,10 @@ void sort_array_ascending(int *a, int n) {
             }
         }
     }
+    return -1;
 }
-void sort_array_descending(int *a, int n) {
+
+int sort_array_descending(int *a, int n) {
     int i, j, temp;
     for (i = 0; i < n - 1; i++) {
         for (j = i + 1; j < n; j++) {
@@ -62,7 +68,9 @@ void sort_array_descending(int *a, int n) {
             }
         }
     }
+    return -1;
 }
+
 int search_array(int *a, int n, int x) {
     for (int i = 0; i < n; i++) {
         if (a[i] == x) {
